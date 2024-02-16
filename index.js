@@ -32,24 +32,24 @@ for (let index = 0; index < cards.length; index++) {
             console.log(discountValue);
 
             // discount apply
-            if (TotalPrice >= 200) {
-                if (discountValue === 'SELL200') {
+            if (discountValue === 'SELL200') {
+                if (TotalPrice >= 200) {
                     // discount calculate
                     let DiscountMoney = TotalPrice * 0.2
 
                     // TOTAL MONEY Calculate
                     discount.innerText = DiscountMoney;
                     totalMoney.innerText = TotalPrice - DiscountMoney;
-
-                    // discountText.value = '';
+                    discountValue = '';
                 }
-            }
-            else {
-                alert('please purchase more than 200$')
-                discountValue = '';
-            }
+                else {
+                    alert('please purchase more than 200$')
+                    discountValue = '';
+                }
+            };
 
         })
 
     })
+    
 };
