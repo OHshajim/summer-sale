@@ -51,5 +51,4 @@ for (let index = 0; index < cards.length; index++) {
         })
 
     })
-    
 };
