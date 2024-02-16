@@ -27,11 +27,13 @@ for (let index = 0; index < cards.length; index++) {
         // discount part
         const applyBtn = document.getElementById('apply-btn')
         applyBtn.addEventListener('click', function () {
-            const discountText = document.getElementById('input-field')
+            const discountText = document.getElementById('input-field').value;
+            const discountValue = discountText.split(" ").join("").toUpperCase();
+            console.log(discountValue);
 
             // discount apply
             if (TotalPrice >= 200) {
-                if (discountText.value === 'SELL 200') {
+                if (discountValue === 'SELL200') {
                     // discount calculate
                     let DiscountMoney = TotalPrice * 0.2
 
@@ -44,7 +46,7 @@ for (let index = 0; index < cards.length; index++) {
             }
             else {
                 alert('please purchase more than 200$')
-                discountText.value = '';
+                discountValue = '';
             }
 
         })
