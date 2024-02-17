@@ -1,4 +1,6 @@
 const cards = document.querySelectorAll('.card');
+const container = document.getElementById('title-container');
+
 let titleCount = 1;
 let TotalPrice = 0;
 for (let index = 0; index < cards.length; index++) {
@@ -8,8 +10,8 @@ for (let index = 0; index < cards.length; index++) {
         const title = card.querySelector('h3').innerText
         const price = parseFloat(card.querySelector('span').innerText.split(' ')[1])
 
-        // items title set
-        const container = document.getElementById('title-container');
+        // items title add
+
         const p = document.createElement('p');
         p.innerText = titleCount + '. ' + title;
         container.appendChild(p);
@@ -52,3 +54,11 @@ for (let index = 0; index < cards.length; index++) {
 
     })
 };
+
+        // to remove add items
+        container.addEventListener('click',function(event){
+            console.log(event.target);
+            event.target.parentNode.removeChild(event.target);
+            titleCount -- ;
+        })
+
