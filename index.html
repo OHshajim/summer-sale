@@ -151,7 +151,7 @@
           <div>
             <h2 class="text-4xl font-bold py-12 ml-4">Furniture</h2>
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center justify-center">
-                        <!-- card -->
+              <!-- card -->
               <div class="text-center card bg-white py-3 rounded-md">
                 <img class="mx-auto bg-slate-200 px-12 py-4" src="Images/Furniture/singel-sofa.png" alt="" />
                 <div class="py-4">
@@ -166,7 +166,7 @@
                   <span class="text-slate-500">$ 185.00</span>
                 </div>
               </div>
-          <!-- card -->
+              <!-- card -->
               <div class="text-center card bg-white py-4 rounded-md">
                 <img class="mx-auto bg-slate-200 px-16 py-4" src="Images/Furniture/chair.png" alt="" />
                 <div class="py-4">
@@ -181,7 +181,7 @@
                   <span class="text-slate-500">$ 299.00</span>
                 </div>
               </div>
-          <!-- card -->
+              <!-- card -->
               <div class="text-center card bg-white py-4 rounded-md">
                 <img class="mx-auto bg-slate-200 px-10 py-4" src="Images/Furniture/sofa.png" alt="" />
                 <div class="py-4">
@@ -213,7 +213,8 @@
             </div>
             <div class="my-8 p-4 bg-white rounded-md">
               <!-- add p tag hare  -->
-              <div id="title-container"></div>
+              <div><ol  id="title-container" type="i "></ol>
+              </div>
               <hr class="my-4" />
               <p class="text-xl font-bold py-2">
                 Total Price: $<span id="totalPrice"></span>
@@ -226,9 +227,27 @@
                 Total: $<span id="total"></span>
               </p>
               <hr class="my-4" />
-              <button class="btn btn-wide bg-[#F11A7B] text-white">
-                Make Purchase
-              </button>
+
+              <!-- The button to open modal -->
+              <a href="#my_modal_8"><button onclick="purchase()" class="btn btn-wide bg-[#F11A7B] text-white">
+                  Make Purchase
+                </button></a>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- popup part -->
+      <div>
+        <!-- Put this part before </body> tag -->
+        <div class="modal" role="dialog" id="my_modal_8">
+          <div class="modal-box flex flex-col justify-center items-center gap-3 bg-[#f11a7bd2] text-white">
+            <h1 class="font-extra-bold text-4xl">Thank you </h1>
+            <h3 class="font-bold text-lg">your order is confirmed </h3>
+            <p class="">Your product will delivered in 48 hours .</p>
+            <div class="modal-action">
+              <a href="#"><button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+              </a>
             </div>
           </div>
         </div>

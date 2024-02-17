@@ -1,7 +1,10 @@
 const cards = document.querySelectorAll('.card');
 const container = document.getElementById('title-container');
+const total = document.getElementById('totalPrice')
+const discount = document.getElementById('discountPrice')
+const totalMoney = document.getElementById('total')
+const applyBtn = document.getElementById('apply-btn')
 
-let titleCount = 1;
 let TotalPrice = 0;
 for (let index = 0; index < cards.length; index++) {
     const card = cards[index];
@@ -11,23 +14,16 @@ for (let index = 0; index < cards.length; index++) {
         const price = parseFloat(card.querySelector('span').innerText.split(' ')[1])
 
         // items title add
-
-        const p = document.createElement('p');
-        p.innerText = titleCount + '. ' + title;
-        container.appendChild(p);
-        titleCount++;
-
+        const li = document.createElement('li');
+        li.innerText = ' ' + title;
+        container.appendChild(li);
         // calculate price 
         TotalPrice += price;
-        const total = document.getElementById('totalPrice')
         total.innerText = TotalPrice;
-        const discount = document.getElementById('discountPrice')
         discount.innerText = 0;
-        const totalMoney = document.getElementById('total')
         totalMoney.innerText = TotalPrice
 
         // discount part
-        const applyBtn = document.getElementById('apply-btn')
         applyBtn.addEventListener('click', function () {
             const discountText = document.getElementById('input-field').value;
             const discountValue = discountText.split(" ").join("").toUpperCase();
@@ -40,7 +36,7 @@ for (let index = 0; index < cards.length; index++) {
                     let DiscountMoney = TotalPrice * 0.2
 
                     // TOTAL MONEY Calculate
-                    discount.innerText = DiscountMoney;
+                    discount.innerText = DiscountMoney.toFixed(2);
                     totalMoney.innerText = TotalPrice - DiscountMoney;
                     discountValue = '';
                 }
@@ -49,16 +45,19 @@ for (let index = 0; index < cards.length; index++) {
                     discountValue = '';
                 }
             };
+            //             // to remove add items
+            // container.addEventListener('click',function(event){
+            //     console.log(event.target);
+            //     event.target.parentNode.removeChild(event.target);
 
+            //     console.log(price);
+            // })
         })
 
     })
 };
 
-        // to remove add items
-        container.addEventListener('click',function(event){
-            console.log(event.target);
-            event.target.parentNode.removeChild(event.target);
-            titleCount -- ;
-        })
 
+
+// purchase btn
+// purchase(){}
